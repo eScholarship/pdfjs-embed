@@ -1,0 +1,19 @@
+{
+  "name": "pdfjs-embed",
+  "version": "1.6.210",
+  "description": "Embeddable version of pdf.js including viewer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eScholarship/pdfjs-embed.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/eScholarship/pdfjs-embed/issues"
+  },
+  "homepage": "https://github.com/eScholarship/pdfjs-embed#readme"
+}
