@@ -7583,8 +7583,8 @@ var PAGE_NUMBER_LOADING_INDICATOR = 'visiblePageIsLoading';
 var DISABLE_AUTO_FETCH_LOADING_BAR_TIMEOUT = 5000;
 
 function configure(PDFJS) {
-  PDFJS.imageResourcesPath = '/images/pdfjs'; // MH CDL
-  PDFJS.workerSrc = '/js/pdfjs/pdf.worker.js'; // MH CDL
+  PDFJS.imageResourcesPath = '/bower_components/pdfjs-embed/images'; // MH CDL
+  PDFJS.workerSrc = '/bower_components/pdfjs-embed/js/pdf.worker.js'; // MH CDL
   PDFJS.cMapUrl = '/cmaps/'; // MH CDL
   PDFJS.cMapPacked = true;
 }
