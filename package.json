@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/eScholarship/pdfjs-embed/issues"
   },
-  "homepage": "https://github.com/eScholarship/pdfjs-embed#readme"
+  "homepage": "https://github.com/eScholarship/pdfjs-embed#readme",
+  "dependencies": {
+    "node-ensure": "0.0.0"
+  }
 }
