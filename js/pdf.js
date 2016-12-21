@@ -9156,7 +9156,7 @@ var fakeWorkerFilesLoader = useRequireEnsure ? (function (callback) {
   require.ensure([], function () {
     var worker = require('./pdf.worker.js');
     callback(worker.WorkerMessageHandler);
-  });
+  }, 'pdfjs-worker'); // MH CDL: gives a name to the webpack bundle
 }) : dynamicLoaderSupported ? (function (callback) {
   requirejs(['pdfjs-dist/build/pdf.worker'], function (worker) {
     callback(worker.WorkerMessageHandler);
