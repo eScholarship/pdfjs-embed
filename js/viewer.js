@@ -1845,7 +1845,7 @@ var DEFAULT_SCALE_VALUE = 'auto';
 var DEFAULT_SCALE = 1.0;
 var UNKNOWN_SCALE = 0;
 var MAX_AUTO_SCALE = 1.25;
-var SCROLLBAR_PADDING = 40;
+var SCROLLBAR_PADDING = 0; // MH CDL: reduced to 0 (from 40) for very slim borders
 var VERTICAL_PADDING = 5;
 
 var mozL10n = document.mozL10n || document.webL10n;
