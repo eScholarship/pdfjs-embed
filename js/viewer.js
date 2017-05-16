@@ -9556,11 +9556,10 @@ window.addEventListener('keydown', function keydown(evt) {
   }
 
   if (!handled && !isViewerInPresentationMode) {
-    // 33=Page Up  34=Page Down  35=End    36=Home
-    // 37=Left     38=Up         39=Right  40=Down
-    // 32=Spacebar
-    if ((evt.keyCode >= 33 && evt.keyCode <= 40) ||
-        (evt.keyCode === 32 && curElementTagName !== 'BUTTON')) {
+    // 33=Page Up  35=End        36=Home       37=Left    38=Up   39=Right 
+    // AM CDL: Don't focus viewer on down button/spacebar:
+    //             32=Spacebar   34=Page Down  40=Down
+    if ([33, 35, 36, 37, 38, 39].includes(evt.keyCode)) {
       ensureViewerFocused = true;
     }
   }
