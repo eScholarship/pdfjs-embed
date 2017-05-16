@@ -1845,7 +1845,7 @@ var DEFAULT_SCALE_VALUE = 'auto';
 var DEFAULT_SCALE = 1.0;
 var UNKNOWN_SCALE = 0;
 var MAX_AUTO_SCALE = 1.25;
-var SCROLLBAR_PADDING = 0; // MH CDL: reduced to 0 (from 40) for very slim borders
+var SCROLLBAR_PADDING = 3; // MH CDL: reduced (from 40) to make nicer looking slim borders
 var VERTICAL_PADDING = 5;
 
 var mozL10n = document.mozL10n || document.webL10n;
@@ -5476,7 +5476,7 @@ var PDFPageView = (function PDFPageViewClosure() {
     var div = document.createElement('div');
     div.id = 'pageContainer' + this.id;
     div.className = 'page';
-    div.style.width = Math.floor(this.viewport.width) + 'px';
+    div.style.width = "auto"; //Math.floor(this.viewport.width) + 'px'; // MH CDL: Avoid initial forcing of page width
     div.style.height = Math.floor(this.viewport.height) + 'px';
     div.setAttribute('data-page-number', this.id);
     this.div = div;
@@ -6756,6 +6756,9 @@ var PDFViewer = (function pdfViewer() {
   }
 
   function isSameScale(oldScale, newScale) {
+    // MH CDL: Total hack to force rescaling when window resized
+    if (window.PDFViewerApplication.forcePdfViewerScale)
+      return false;
     if (newScale === oldScale) {
       return true;
     }
@@ -9089,6 +9092,13 @@ function webViewerResize() {
     }
     PDFViewerApplication.pdfViewer.update();
   }
+}
+
+// MH CDL: Total hack to force rescaling when window resized
+window.forcePdfViewerResize = function() {
+  window.PDFViewerApplication.forcePdfViewerScale = true;
+  webViewerResize();
+  window.PDFViewerApplication.forcePdfViewerScale = false;
 }
 
 window.addEventListener('hashchange', function webViewerHashchange(evt) {
