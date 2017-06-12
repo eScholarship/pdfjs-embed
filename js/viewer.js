@@ -8727,6 +8727,7 @@ function webViewerInitialized() {
   var waitForBeforeOpening = [];
   var appConfig = PDFViewerApplication.appConfig;
   var fileInput = document.createElement('input');
+  fileInput.style = "display: none;"; // MH CDL: Keep ugly file input from cluttering our footer
   fileInput.id = appConfig.openFileInputName;
   fileInput.className = 'fileInput';
   fileInput.setAttribute('type', 'file');
