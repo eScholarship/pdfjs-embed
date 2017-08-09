@@ -8249,6 +8249,8 @@ var PDFViewerApplication = {
     var downloadedPromise = pdfDocument.getDownloadInfo().then(function() {
       self.downloadComplete = true;
       self.loadingBar.hide();
+      // AM CDL: loadingBar is contained inside toolbarContainer, so that needs to be hidden too
+      document.querySelector('#toolbarContainer').setAttribute('hidden', true);
     });
 
     this._updateUIToolbar({
