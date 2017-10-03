@@ -9742,6 +9742,6 @@ window.webViewerLoad = function() {
   pdfjsWebLibs.pdfjsWebApp.PDFViewerApplication.run(config);
 }
 
-/* MH CDL: Delay loading until content has been placed under React control.
-document.addEventListener('DOMContentLoaded', webViewerLoad, true);*/
-
+window.webViewerUnload = function() {
+  pdfjsWebLibs.pdfjsWebApp.PDFViewerApplication.close();
+}
