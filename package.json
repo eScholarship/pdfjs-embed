@@ -1,6 +1,6 @@
 {
   "name": "pdfjs-embed",
-  "version": "1.6.210.CDL_06",
+  "version": "1.6.210.CDL_07",
   "description": "Embeddable version of pdf.js including viewer",
   "main": "index.js",
   "scripts": {

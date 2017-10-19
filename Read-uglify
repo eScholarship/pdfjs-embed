@@ -1,0 +1,1 @@
+../jschol/node_modules/.bin/uglifyjs -c sequences=false --mangle -- js/pdf.worker.js > js/pdf.worker.min.js
